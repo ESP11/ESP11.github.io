@@ -15,6 +15,14 @@
 
 	<style>
 		.avatar {border-radius: 50%;}  
+
+		table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		th, td {
+				padding: 10px;
+			}	
 	</style>
 
 </head>
@@ -45,7 +53,7 @@
 							<h4>Navigation</h4>	
 							<nav>
 								<ul>
-									<li><a href="#client" class="current">Client</a></li>
+									<li><a href="#personas" class="current">Personas</a></li>
 									<li><a href="#vision">Vision</a></li>
 									<li><a href="#specification">Specification</a></li>
 									<li><a href="#architecture">Architecture</a></li>
@@ -59,24 +67,225 @@
 						</div>
 					</aside>
 					<div class="content-info">
-						<div class="section-txt" id="client">
-							<h3>Client</h3>
-							<p>Texto</p>
+						<div class="section-txt" id="personas"> <!--PERSONAS-->
+							<h2>Personas</h2> <!--Personas-->
+							<p><b><h5>Personas</h5></b></p>
 							<ul>
-								<li>1º ponto</li>
-								<li>2º ponto</li>
+								<li><b>André</b></li>
+								<p>
+									André is a 60 years old firefighter that due to his age and physical problems cannot fight fires anymore.
+								</p>
+								<p>
+									André has a lot of experience fighting fires, went through several difficulties while fighting them, so 
+									his job now is to manage firemans to make sure that during a fire, all the firemen are safe and in 
+									healthy conditions.
+								</p>
+								<p>
+										To make sure that André is making a good job he would like to have a system where it would be possible
+										 to get detailed info about the field, previous fires in that field and every fireman conditions.
+								</p>
+								<li><b>Luís</b></li>
+								<p>
+										Luís is a 20 years old student that lives in Serra do Caramulo and he spends all his summer holidays 
+										in his house.
+								</p>
+								<p>
+										Every summer, there’s a dangerous risk of fire in the forest close to his house. In the last summer, 
+										there was a fire that almost reached his house and he went help firemen fighting the fire! 
+								</p>
+								<p>
+										As it happens almost every summer, Luís would like to have some kind of valid source information that 
+										would provide information about the fires in real time, so he could make sure that his property is safe.
+								</p>
 							</ul>
+
+							<p><b><h5>Scenarios</h5></b></p> <!--Scenarios-->
+							<ul>
+								<li><b>A fire is starting and André wants to monitor his team:</b></li>
+								<p>
+										As soon as a fire start and the firemen reach the field, the firemen team leader which monitors 
+										their actions during the fire through the Web App, will be able to set and get each fireman position 
+										easily, their healthy conditions and the field conditions as well.
+								</p>
+								<p>
+										This information will avoid dangerous exposures to heat and high levels of gases such C02, 
+										which will improve the welfare of the firemen during the fire and André will have a better perception 
+										of what’s happening in real time and what is the best move to take.
+								</p>
+								<li><b>Luís was watching the news and saw that a fire close to his house as started:</b></li>
+								<p>
+										Luís was aware of the existence of a fire near his home, with de Web App he can see the state of the 
+										fire through time graphs built from information given by firefighters sensors who are fighting on the ground.
+								</p>
+							</ul>
+
+							<p><b><h5>Motivation</h5></b></p> <!--Motivation-->
+							<ul> 
+								<li><b>André - Fireman - 60 years old </b></li>
+								<ul>
+									<li> 
+										Would like to improve the conditions of the firemen during the fire improving his
+										monitoring.
+									</li>
+									<li>
+										Would like to know more about past fires that happened in some fields.
+									</li>
+								</ul>
+								<li><b>Luís - Student - 20 years old</b></li>
+								<ul>
+										<li> 
+											Would like to get all the detailed info about the fires that 
+											happens close to his house.
+										</li>
+								</ul>
+							</ul>
+
+							<p><b><h5>Goals</h5></b></p> <!--Goals-->
+							<ul>
+								<p>
+									The goal is to develop an intuitive web app where it will be 
+									possible to locate and check every fireman's position, heart rate, 
+									CO2 level and field temperature and last but not least, it will provide 
+									dynamic dashboards from actual and past fires. 
+								</p>
+							</ul>
+							
 						</div>
-						<div class="section-txt" id="vision">
+						<!-- <div class="section-txt" id="vision">
 							<h3>Vision</h3>
 							<ul>
 								<li>1º</li>
 								<li>2º</li>
 							</ul>
-						</div>
-						<div class="section-txt" id="specification">
+						</div> -->
+						<div class="section-txt" id="specification"> <!-- SPECIFICATION-->
 							<h3>Specification</h3>
-							<p>Text</p>
+							<p><b><h5>Features</h5></b></p> <!--Features-->
+							<ul>
+								<li>Information about CO2, GPS position, heart rate and temperature.</li>
+								<li>Processing data (from the fireman's) and presenting it in a map.</li>
+								<li>Dashboard area for displaying statistics.</li>
+								<li>Information regarding statistic data about previous fires.</li>
+							</ul>
+
+							<p><b><h5>Requirements</h5></b></p> <!--Requirements-->
+							<ul>
+								<li>Internet Connection.</li>
+								<li>Web Browser.</li>
+							</ul>
+
+							<p><b><h5>Use Cases</h5></b></p> <!--Use Cases-->
+							<table style="width:70%"> <!--Use case 1-->
+									<tr>
+										<th>ID and Name</th>
+										<th>UC1 - Check firefighters team position and vital levels</th> 
+									</tr>
+									<tr>
+											<td>Primary Actor</td>
+											<td>User</td>
+									</tr>
+									<tr>
+											<td>Description</td>
+											<td>User wants to check is team positions and vital levels</td>
+									</tr>
+									<tr>
+											<td>Normal Flow</td>
+											<td>
+												<li>User accesses the web App</li>
+												<li>User selects the map tab</li>
+												<li>User search in map the position of his team</li>
+												<li>Double click on each firefighter icon on the map, User can see vital levels values</li>
+											</td>
+									</tr>
+									<tr>
+											<td>Preconditions</td>
+											<td>Pre - 1: Sensors on
+												<br>
+													Pre - 2: Firefighters in the field
+												</br>
+											</td>
+									</tr>
+									<tr>
+											<td>Postconditions</td>
+											<td>Pos - 1: firefighter icons visible on the map</td>
+									</tr>
+									<tr>
+											<td>Priority</td>
+											<td>High</td>
+									</tr>
+							</table>
+							<br>
+							<table style="width:70%"> <!--Use case 2-->
+								<tr>
+									<th>ID and Name</th>
+									<th>UC2 - Check fire state</th> 
+								</tr>
+								<tr>
+										<td>Primary Actor</td>
+										<td>User</td>
+								</tr>
+								<tr>
+										<td>Description</td>
+										<td>User wants to check a particular fire state.</td>
+								</tr>
+								<tr>
+										<td>Normal Flow</td>
+										<td>
+											<li>User accesses the web App</li>
+											<li>User selects the map tab</li>
+											<li>User identifies in map the position of the fire</li>
+											<li>User can see temporal graphics that shows statistics values like temperature and CO2 levels</li>
+										</td>
+								</tr>
+								<tr>
+										<td>Preconditions</td>
+										<td>Pre - 1: fire appears on the map</td>
+								</tr>
+								<tr>
+										<td>Postconditions</td>
+										<td>Pos - 1: detailed info available.</td>
+								</tr>
+								<tr>
+										<td>Priority</td>
+										<td>High</td>
+								</tr>
+						</table>
+						<br>
+						<table style="width:70%"> <!--Use case 3-->
+							<tr>
+								<th>ID and Name</th>
+								<th>UC3 - See fires historic</th> 
+							</tr>
+							<tr>
+									<td>Primary Actor</td>
+									<td>User</td>
+							</tr>
+							<tr>
+									<td>Description</td>
+									<td>User wants to check past fires.</td>
+							</tr>
+							<tr>
+									<td>Normal Flow</td>
+									<td>
+										<li>User accesses the web App</li>
+										<li>User selects Fires Historic tab</li>
+										<li>User selects the place he is looking for</li>
+										<li>User can see all info about previous fires</li>
+									</td>
+							</tr>
+							<tr>
+									<td>Preconditions</td>
+									<td>None</td>
+							</tr>
+							<tr>
+									<td>Postconditions</td>
+									<td>Pos - 1: list of past fires is available</td>
+							</tr>
+							<tr>
+									<td>Priority</td>
+									<td>High</td>
+							</tr>
+					</table>
 						</div>
 						<div class="section-txt" id="architecture">
 							<h3>Architecture</h3>
