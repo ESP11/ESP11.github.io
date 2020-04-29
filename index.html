@@ -187,24 +187,26 @@
 						<div class="section-txt" id="specification">
 							<!-- SPECIFICATION-->
 							<h3>Specification</h3>
-							<p><b>
+							<p>
+								<b>
 									<h5>Features</h5>
-								</b></p>
+								</b>
+							</p>
 							
 							<!--Features-->
 							
 							<ul>
 								<p>Dashboard webPage with the following information:</p>
 								<ul>
-									<li>Dynamic graphic with firefighter' Heart rate values</li>
-									<li>Dynamic graphic with firefighter' Environment values</li>
-									<li>Dynamic graphic with firefighter' GPS tracker values</li>
+									<li>Dynamic graphic with firefighters' Heart rate values</li>
+									<li>Dynamic graphic with firefighters' Environment values</li>
+									<li>Dynamic graphic with firefighters' GPS tracker values</li>
 								</ul>
 								
 								<p>Interative Map with the following information:</p>
 								<ul>
 									<li>Dymamic markers representing actual firefighters location</li>
-									<li>Small windown with firefighter' information when pressed a marker</li>
+									<li>Small windown with firefighters' information when pressed a marker</li>
 								</ul>
 								
 							</ul>
@@ -349,8 +351,20 @@
 							<h3>Tests And Acceptance</h3>
 							<p>Text</p>
 							<ul>
-								<li>1º</li>
-								<li>2º</li>
+								<h4>Scenario 1: Firefighter Location</h4>
+								<p>Given the firefighter number (ID)</p>
+								<p>When I want to know where the firefighter is</p>
+								<p>Then the firefighter appears on the map</p>
+
+								<h4>Scenario 2: Firefighter Informations</h4>
+								<p>Given the firefighter number (ID)</p>
+								<p>When I want to check the informations of the firefighter</p>
+								<p>Then the firefighters' information about Heart Rate and temperature will appear on a window in the map</p>
+
+								<h4>Scenario 3: Firefighters' Heart Rate status</h4>
+								<p>Given the firefighters numbers (ID) and Heart Rate values</p>
+								<p>When I want to check the firefighters' Heart Rate status</p>
+								<p>Then the firefighters' information about Heart Rate will appear on the dashboard</p>
 							</ul>
 						</div>
 						<div class="section-txt" id="developer">
