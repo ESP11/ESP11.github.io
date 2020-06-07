@@ -371,13 +371,76 @@
 
 						<div class="section-txt" id="developer">
 							<h3>Developer</h3>
-							<!--
-							<p>Text</p>
-							<ul>
-								<li>1º</li>
-								<li>2º</li>
-							</ul>
-							-->
+							
+								<p><b>
+									<h5>Runtime: 192.168.160.103</h5>
+								</b></p>
+
+								<!--Ports-->
+								<table style="width:70%">
+		
+									<!--Use case 1-->
+									<tr>
+										<th>Ports</th>
+										<th>Service</th>
+									</tr>
+									<tr>
+										<td>11080:8080</td>
+										<td>Service - Layer</td>
+									</tr>
+									<tr>
+										<td>11300:3000</td>
+										<td>FrontEnd</td>
+									</tr>
+									<tr>
+										<td>9000</td>
+										<td>Portainer</td>
+									</tr>
+									<tr>
+										<td>2181:9092</td>
+										<td>kafka</td>
+									</tr>
+									<tr>
+										<td>2182</td>
+										<td>zookeeper</td>
+									</tr>
+									<tr>
+										<td>3307</td>
+										<td>MySQL</td>
+									</tr>
+									<tr>
+										<td>9200</td>
+										<td>elk-elasticsearch</td>
+									</tr>
+									<tr>
+										<td>5601</td>
+										<td>elk-kibana</td>
+									</tr>
+									<tr>
+										<td>11200</td>
+										<td>logstash</td>
+									</tr>
+								</table>
+
+								</br>
+								<p><b><h5>Operational Information</h5></b></p>
+								</br>
+								<p>
+									<h6>MVN plugins:</h6></p>
+    								<p>mvn clean package</p>
+									<p>mvn deploy</p>
+									
+									<h6>Docker Images:</h6></p>
+
+    								<p>We build the docker images (service-layer and frontend) through Dockerfile and push them to the repository 192.168.160.99:5000 and then we run them on runtime.</p>
+
+									<h6>Jenkins Pipeline</h6>
+
+									<ul>
+										<img src="images/jenkins.png" class="center">
+									</ul>
+									
+
 						</div>
 
 						<div class="section-txt" id="manual">
