@@ -214,6 +214,7 @@
 								<li>Web Browser.</li>
 							</ul>
 
+							<center>
 							<p><b>
 									<h5>Use Cases</h5>
 								</b></p>
@@ -335,14 +336,17 @@
 									<td>High</td>
 								</tr>
 							</table>
+						</center>
 						</div>
+						<center>
 						<div class="section-txt" id="architecture">
 							<h3>Architecture</h3>
 							<ul>
 								<img src="images/architecture.png" class="center">
 							</ul>
 						</div>
-
+						</center>
+						<center>
 						<div class="section-txt" id="tests">
 							<h3>Tests And Acceptance</h3>
 							
@@ -369,6 +373,9 @@
 							</ul>
 						</div>
 
+						</center>
+
+						<center>
 						<div class="section-txt" id="developer">
 							<h3>Developer</h3>
 							
@@ -377,9 +384,7 @@
 								</b></p>
 
 								<!--Ports-->
-								<table style="width:70%">
-		
-									<!--Use case 1-->
+								<table style="width:50%">
 									<tr>
 										<th>Ports</th>
 										<th>Service</th>
@@ -422,27 +427,67 @@
 									</tr>
 								</table>
 
+								<p><b>
+									<h5>Repository: 192.168.160.99:5000</h5>
+								</b></p>
+
+								<!--Repository-->
+								<table style="width:50%">
+									
+									<tr>
+										<th>Docker Image</th>
+									</tr>
+									<tr>
+										<td>esp11-service-layer</td>
+									</tr>
+									<tr>
+										<td>esp11-data-layer</td>
+									</tr>
+									<tr>
+										<td>esp11-logstash</td>
+									</tr>
+									<tr>
+										<td>esp11-frontend</td>
+									</tr>
+								</table>
+
 								</br>
 								<p><b><h5>Operational Information</h5></b></p>
-								</br>
-								<p>
-									<h6>MVN plugins:</h6></p>
+								
+									<h6>MVN plugins:</h6>
     								<p>mvn clean package</p>
 									<p>mvn deploy</p>
 									
-									<h6>Docker Images:</h6></p>
+									<h6>Docker Images:</h6>
 
     								<p>We build the docker images (service-layer and frontend) through Dockerfile and push them to the repository 192.168.160.99:5000 and then we run them on runtime.</p>
 
-									<h6>Jenkins Pipeline</h6>
+									<h6>Jenkins Pipeline:</h6>
 
 									<ul>
 										<img src="images/jenkins.png" class="center">
 									</ul>
-									
+
+									<h6>MySQL Credentials:</h6>
+									<p><b>user:</b> esp11_db</p>
+									<p><b>password:</b> cenas</p>
+
+									<h6>Elasticsearch/Kibana Credentials:</h6>
+									<p><b>user:</b> esp11</p>
+									<p><b>password:</b> esp11password</p>
+
+									<h6>Kafka Topics:</h6>
+									<p>esp11_hr</p>
+									<p>esp11_env</p>
+									<p>esp11_gps</p>
+
+									<h6>Service-Layer:</h6>
+									<p>With mvn deploy we deploy our java mvn app to artifactory</p>
+									<p>In dockerfile we get the jar file from artifactory</p>
+									<p>From openjdk:8-jre-alpine image we run the jar file</p>
 
 						</div>
-
+					</center>
 						<div class="section-txt" id="manual">
 							<h3>Manual</h3>
 							<!--
