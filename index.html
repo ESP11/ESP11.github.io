@@ -456,22 +456,41 @@
 									</tr>
 								</table>
 
-								</br>
-								<p><b><h5>Operational Information</h5></b></p>
-								
-									<h6>MVN plugins:</h6>
-    								<p>mvn clean package</p>
-									<p>mvn deploy</p>
+									</br>
+									<p><b><h5>Operational Information</h5></b></p>
 									
-									<h6>Docker Images:</h6>
-
-    								<p>We build the docker images (service-layer and frontend) through Dockerfile and push them to the repository 192.168.160.99:5000 and then we run them on runtime.</p>
-
-									<h6>Jenkins Pipeline:</h6>
+										
+									<p><b><h6>Jenkins Pipeline:</h6></b></p>
 
 									<ul>
 										<img src="images/jenkins.png" class="center">
 									</ul>
+
+									<p><b><h6>Jenkins File:</h6></b></p>
+									<p>Our jenkins pipeline integrates our github project with github credentials and through the steps of each stage it deploys our java maven app (service layer) and our frontend made with nuxt.js framework.</p>
+									<p>The stages of Jenkins pipeline are:</p>
+									<p>1- Build Stage:</p>
+									<p>This stage uses 'mvn clean package' plugin from maven which cleans the files and directories generated during the previous build.</p>
+									<p>2- Test Stage:</p>
+									<p>This stage uses 'mvn test' plugin from maven to run unit tests.</p>
+									<p>3- Artifactory Deployment Stage:</p>
+									<p>This stage uses 'mvn deploy' plugin from maven to deploy our maven app to artifactory repository.</p>
+									<p>The settings.xml file is integrated in jenkins and in pom.xml we define where to deploy our maven app in artifactory.</p>
+									<p>4- Build Docker Image Stage</p>
+									<p>In this stage we make a parallel step where we build our java maven app Docker Image (Service_Layer setp) and our frontend Docker Image (Frontend step).</p>
+									<p>Before the image builds, we access the runtime vm through our ssh credentials added on jenkins, and we run the 'docker_clear.sh' script which stops the docker containers and removes its respective images so we make sure all the changes made to each one of this layers will be deployed and it will not deploy old versions of it.</p>
+									<p>After the image build, we tag each image and then we push it to Docker repository 192.168.160.99:5000.</p>
+									<p>The difference between the two steps is:</p>
+									<p>Service_layer step:</p>
+									<p>The docker_clear script is runned and then we build a Docker Image that basically from openjdk:8-jre-alpine docker image it adds the jar file downloaded from artifactory.</p>
+									<p>Frontend:</p>
+									<p>The docker_clear script is runned and then we build a Docker Image that from node:current-slim docker image builds an image with all the frontend files within its dependencies.</p>
+									<p>5- Runtime Deployment</p>
+									<p>Another stage that contains parallel steps in which one we deploy our images on runtime vm using ssh credentials we run the Service layer and frontend containers.</p>
+									</br>
+									<p>To complement our Jenkins Pipeline, we added a choice parameter that allows to run the build with the test stage or not and we added the option of automatically run the build after a commit is done. </p>
+
+									<p><b><h5>Credentials</h5></b></p>
 
 									<h6>MySQL Credentials:</h6>
 									<p><b>user:</b> esp11_db</p>
@@ -485,11 +504,6 @@
 									<p>esp11_hr</p>
 									<p>esp11_env</p>
 									<p>esp11_gps</p>
-
-									<h6>Service-Layer:</h6>
-									<p>With mvn deploy we deploy our java mvn app to artifactory</p>
-									<p>In dockerfile we get the jar file from artifactory</p>
-									<p>From openjdk:8-jre-alpine image we run the jar file</p>
 
 						</div>
 					</center>
