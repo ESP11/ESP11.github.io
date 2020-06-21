@@ -83,10 +83,10 @@
 							<h2>System Description</h2>
 							<p>
 								System that processes data collected from real life firefighters (GPS positions, heart rate, level of CO2, 
-								temperature, pressure, humidity, luminosity and battery of the sensor in the field). The system will contain 
-								an API that will be able to receive information from the sensors in real time. 
-								The information will then be displayed in a web UI using a map that will simulate the positions 
-								of the firefighters and a dashboard that will give a set of statistics regarding CO Levels, Heart Rate and Temperatures.
+								temperature, pressure, humidity, luminosity and battery of the sensor in the field). The system contains 
+								an API that's' able to receive information from the sensors in real time. 
+								The information is displayed in a web UI using a map that simulates the positions 
+								of the firefighters and a dashboard that gives a set of statistics regarding CO Levels, Heart Rate and Temperatures.
 							</p>
 						</div>
 
@@ -396,6 +396,36 @@
 						<div class="section-txt" id="developer">
 							<h2>Developer</h2>
 							
+								<p><b>
+									<h5>How to run in Localhost:</h5>
+								</b></p>
+								</br>
+								<p> - change git branch to "nuno"</p>
+								<p><b> To Run kafka Producers:</b></p>
+								<p>	- cd "kafka DIR"</p>
+								<p>	- open 3 terminal windows</p>
+								<p>	- on 1º, bin/zookeeper-server-start.sh config/zookeeper.properties</p>
+								<p>	- on 2º, bin/kafka-server-start.sh config/server.properties</p>
+								</br>
+								<p><b> If you didn't yet create the kafka topics, on a 3º window:</b></p>
+								<p>		- bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic esp11_hr</p>
+								<p>		- bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic esp11_env</p>
+								<p>		- bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic esp11_gps</p>
+								</br>	
+								<p>	- cd "project DIR"/data-layer</p>
+								<p>	- python3 producer.py</p>
+								</br>
+								<p><b>To Run SpringBoot Application:</b></p>
+									- cd "project DIR"/service-layer</p>
+									- mvn clean</p>
+									- mvn spring-boot:run</p>
+								</br>
+								<p><b>To Run Nuxt Web App:</b></p>
+								<p> - cd "project DIR"/front-end</p>
+								<p>	- npm i</p>
+								<p> - npm run dev</p>
+								<p> - open browser on "localhost:3000"</p>
+								</br>
 								<p><b>
 									<h5>Runtime: 192.168.160.103</h5>
 								</b></p>
