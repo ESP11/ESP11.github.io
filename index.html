@@ -407,7 +407,7 @@
 							<h2>Developer</h2>
 							
 								<p><b>
-									<h5>How to run in Localhost:</h5>
+									<h4>How to run in Localhost:</h4>
 								</b></p>
 								<p> - change git branch to "nuno"</p>
 								<p><b> To Run kafka Producers:</b></p>
@@ -435,6 +435,20 @@
 								<p> - npm run dev</p>
 								<p> - open browser on "localhost:3000"</p>
 								</br>
+
+								<p><b>
+									<h4>Run Project in Runtime VM:</h4>
+								</b></p>
+
+								<p>The kafka topics are already created on kafka container as well is the database setup on mysql container (database and credentials) which are already 
+									running in runtime VM, so we just need to run the producer, SpringBoot Applicattion (Service-Layer) and Frontend containers like this:</p>
+									<p><b>Start Producer:</b></p>
+									<p>docker start 192.168.160.99:5000/esp11-data-layer</p>
+									<p><b>Deploy Service-Layer and Frontend:</b></p>
+									<p>Build Jenkins Pipeline</p>
+									</br>
+									<p>Then, after deployment, http://192.168.160.103:11300/ will give access to the frontend container where all the info about firefighters will be displayed</p>
+
 								<p><b>
 									<h5>Runtime: 192.168.160.103</h5>
 								</b></p>
