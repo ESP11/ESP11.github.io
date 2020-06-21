@@ -440,9 +440,11 @@
 									<h4>Run Project in Runtime VM:</h4>
 								</b></p>
 
+								<p>First of all, you must be connected to UA VPN.</p>
 								<p>The kafka topics are already created on kafka container as well is the database setup on mysql container (database and credentials) which are already 
 									running in runtime VM, so we just need to run the producer, SpringBoot Applicattion (Service-Layer) and Frontend containers like this:</p>
 									<p><b>Start Producer:</b></p>
+									<p>Access 192.168.160.103 and then do the following command:</p>
 									<p>docker start 192.168.160.99:5000/esp11-data-layer</p>
 									<p><b>Deploy Service-Layer and Frontend:</b></p>
 									<p>Build Jenkins Pipeline</p>
