@@ -364,10 +364,28 @@
 						</div>
 						<center>
 						<div class="section-txt" id="architecture">
-							<h3>Architecture</h3>
+							<h2>Architecture</h2>
+							<h3>Logical Architecture</h3>
 							<ul>
 								<img src="images/architecture.png" class="center">
 							</ul>
+							<p>In this project, the sensors are equipment present in firefighters' jackets that emit various 
+								types of captured values such as Temperature, Heart rate, CO2, among others.</p>
+							<p>Cloud servers represent all information coming from sensors that is stored in CSV files.</p>
+							<p>Entry Points are python modules that read CSV files, organize their content into structured 
+								dictionaries and send them to the Kafka Broker using a simulated clock, so that values are entered in a timely manner.</p>
+							<p>Kafka Broker receives the data from the Entry Point and forwards it to the Data Processor.</p>
+							<p>The Data Processor is composed of 2 micro-services, the first of which is to receive data from Kafka Broker 
+								through various Kafka Consumer Listeners and respective topics. 
+								In this service, the database (MySQL Database) is also updated through JPA Persistence. 
+								The second micro-service aims to fetch information from the database using CRUD reprositories. 
+								It is also constituted by a REST API Controller whose function is to update the endpoints of our API.</p>
+							<p>In the REST API Endpoints there are basic endpoints made up of information from the Data Processor in JSON format.</p>
+							<p>In the Nuxt Web App there is a Web Application made up of several features, in which each component fetchs information using the REST API Endpoint.</p>
+							</br>
+							<p>The choice of architecture was made in this way so that the information present in our Web App was always updated with the most recent values coming from the sensors (Real Time Values).</p>
+							</br>
+							<h3>Logical Architecture</h3>
 							<ul>
 								<img src="images/arq.jpg" class="center">
 							</ul>
