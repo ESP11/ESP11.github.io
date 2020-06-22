@@ -389,6 +389,12 @@
 							<ul>
 								<img src="images/arq.jpg" class="center">
 							</ul>
+							<p>CSV files are read in Kafka Broker Producer, and their contents are organized in structured dictionaries which are then sent to Kafka Broker within a certain period of time.</p>
+							<p>Kafka Broker Listener with JPA Persistence receives data from Kafka Broker through several Kafka Consumer Listeners and respective topics and updated the database (MySQL Database) through JPA Persistence.</p>
+							<p>REST API Controller aims to fetch database information using CRUD reprositories. It is also constituted by a REST API Controller whose function is to update the endpoints of our API.</p>
+							<p>The REST Endpoints contain basic endpoints made up of information from the Data Processor in JSON format.</p>
+							<p>In the NUXT JS Web App with Dashboard & Iterative Map there is a Web Application made up of several features, in which each component fetchs information using the REST API Endpoint.
+							</p>
 						</div>
 						</center>
 						<center>
